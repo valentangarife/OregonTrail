@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.GameOverController"
+           alignment="CENTER"
+           style="-fx-background-color: black;">
+
+    <!-- Imagen de Game Over -->
+    <ImageView fx:id="gameOverImage" preserveRatio="true" fitWidth="1280" fitHeight="720">
+        <Image url="@../images/pantalla/gameOver.png"/>
+    </ImageView>
+
+    <!-- Botones sobre la imagen -->
+    <VBox spacing="20" alignment="CENTER" StackPane.alignment="BOTTOM_CENTER">
+        <padding>
+            <Insets bottom="100"/>
+        </padding>
+
+        <Label text="💀 GAME OVER 💀" 
+               style="-fx-font-size: 48px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);"/>
+
+        <Label fx:id="mensajeLabel" text="Has muerto en tu viaje hacia Oregón" 
+               style="-fx-font-size: 24px; -fx-text-fill: white; -fx-effect: dropshadow(gaussian, black, 5, 0.8, 0, 0);"/>
+
+        <Button text="🔄 Volver al Menú"
+                onAction="#volverAlMenu" 
+                prefWidth="300" prefHeight="60"
+                style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 10; -fx-cursor: hand;"/>
+    </VBox>
+
+</StackPane>
+

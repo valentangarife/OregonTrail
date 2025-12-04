@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.PrepararViajeController">
+
+    <children>
+
+        <!-- Fondo PREPARAR VIAJE -->
+        <ImageView fitWidth="1100" fitHeight="600" preserveRatio="false" mouseTransparent="true">
+            <image>
+                <Image url="@../images/pantalla/prepararViaje.png"/>
+            </image>
+        </ImageView>
+
+
+        <!-- Panel con controles encima del fondo -->
+        <VBox spacing="12"
+              StackPane.alignment="TOP_CENTER">
+            <!-- bajamos el panel para no tapar el título de la imagen -->
+            <padding>
+                <Insets top="220" left="40" right="40" bottom="40"/>
+            </padding>
+
+            <!-- DATOS DEL JUGADOR -->
+            <HBox spacing="10">
+                <Label text="Nombre del jugador:"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+                <TextField fx:id="nombreField"
+                           prefWidth="220"
+                           promptText="Ingresa tu nombre"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Profesión:"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+                <Label fx:id="profesionLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Vida inicial:"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+                <Label fx:id="vidaLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <HBox spacing="10">
+                <Label text="Dinero inicial:"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+                <Label fx:id="dineroInicialLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+            </HBox>
+
+            <Label text="Selecciona qué comprar para el viaje:"
+                   style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+            <!-- COMIDA -->
+            <HBox spacing="10">
+                <Label text="Comida (raciones)" prefWidth="180"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Cantidad:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <TextField fx:id="comidaField"
+                           prefWidth="60"
+                           promptText="0"/>
+                <Label text="Precio unitario:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label fx:id="precioComidaLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Total:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label fx:id="totalComidaLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- MUNICION -->
+            <HBox spacing="10">
+                <Label text="Munición (balas)" prefWidth="180"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Cantidad:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <TextField fx:id="municionField"
+                           prefWidth="60"
+                           promptText="0"/>
+                <Label text="Precio unitario:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label fx:id="precioMunicionLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Total:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label fx:id="totalMunicionLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- MEDICINA -->
+            <HBox spacing="10">
+                <Label text="Medicina (kits)" prefWidth="180"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Cantidad:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <TextField fx:id="medicinaField"
+                           prefWidth="60"
+                           promptText="0"/>
+                <Label text="Precio unitario:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label fx:id="precioMedicinaLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label text="Total:"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+                <Label fx:id="totalMedicinaLabel"
+                       style="-fx-text-fill: white; -fx-font-size: 14px;"/>
+            </HBox>
+
+            <!-- DINERO RESTANTE -->
+            <HBox spacing="10">
+                <Label text="Dinero restante:"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow( gaussian , black , 4, 0.7 , 1 , 1 );"/>
+                <Label fx:id="dineroRestanteLabel"
+                       style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: white; -fx-effect: dropshadow( gaussian , black , 4, 0.7 , 1 , 1 );"/>
+
+
+            </HBox>
+
+            <!-- Botones de acción -->
+            <HBox spacing="20">
+                <Button fx:id="comenzarButton"
+                        text="Comenzar viaje"
+                        onAction="#comenzarViaje"
+                        style="-fx-font-size: 14px; -fx-font-weight: bold;"/>
+
+                <Button text="Volver a profesiones"
+                        onAction="#volverProfesiones"
+                        style="-fx-font-size: 14px;"/>
+            </HBox>
+
+        </VBox>
+
+    </children>
+
+</StackPane>

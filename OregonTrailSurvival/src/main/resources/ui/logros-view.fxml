@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.LogrosViewController">
+
+    <children>
+
+        <!-- 🌄 Fondo de la pantalla -->
+        <ImageView fitWidth="1100" preserveRatio="true">
+            <image>
+                <Image url="@../images/pantalla/verLogros.png"/>
+            </image>
+        </ImageView>
+
+        <!-- 📄 Contenedor encima del fondo -->
+        <VBox alignment="TOP_CENTER" spacing="20">
+
+            <padding>
+                <Insets top="200" left="50" right="50"/>
+            </padding>
+
+            <!-- Lista de logros -->
+            <ListView fx:id="listViewLogros"
+                      prefWidth="600"
+                      prefHeight="350"
+                      style="-fx-font-size: 18px; -fx-background-color: white;"/>
+
+            <!-- Botones horizontales -->
+            <HBox alignment="CENTER" spacing="15">
+                <Button text="🎮 Volver al Juego"
+                        onAction="#volverAlJuego"
+                        prefWidth="180"
+                        style="-fx-font-size: 14px; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 8 15; -fx-background-radius: 5;"/>
+                
+                <Button text="📋 Volver al Menú"
+                        onAction="#volverAlMenu"
+                        prefWidth="180"
+                        style="-fx-font-size: 14px; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-padding: 8 15; -fx-background-radius: 5;"/>
+            </HBox>
+
+        </VBox>
+
+    </children>
+
+</StackPane>

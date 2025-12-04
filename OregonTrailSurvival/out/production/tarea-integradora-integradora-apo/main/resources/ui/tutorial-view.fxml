@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.TutorialController">
+
+    <children>
+
+        <!-- Fondo TUTORIAL -->
+        <ImageView fitWidth="1100" preserveRatio="true">
+            <image>
+                <Image url="@../images/pantalla/tutorial.png"/>
+            </image>
+        </ImageView>
+
+
+        <!-- Botón transparente sobre "Elegir Profesion" -->
+        <Button onAction="#irAProfesion"
+                prefWidth="350" prefHeight="130"
+                style="-fx-background-color: transparent;"
+                StackPane.alignment="CENTER_RIGHT"
+                translateX="-300"  translateY="100"/>
+        <!-- mueve el botón hacia abajo -->
+
+
+    </children>
+
+</StackPane>

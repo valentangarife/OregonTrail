@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.BienvenidaController">
+
+    <children>
+
+        <!-- Fondo de bienvenida -->
+        <ImageView fitWidth="1100" preserveRatio="true">
+            <image>
+                <!-- ruta ABSOLUTA en resources -->
+                <Image url="@../images/pantalla/Bienvenida.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Botón transparente sobre el botón verde "MENU" -->
+        <Button onAction="#abrirMenu"
+                prefWidth="350" prefHeight="130"
+                style="-fx-background-color: transparent;">
+            <StackPane.alignment>CENTER</StackPane.alignment>
+        </Button>
+
+    </children>
+
+</StackPane>

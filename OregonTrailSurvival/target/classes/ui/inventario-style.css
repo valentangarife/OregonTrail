@@ -1,0 +1,26 @@
+/* Estilo para el ListView del inventario */
+.list-view {
+    -fx-background-color: #34495e;
+    -fx-border-color: #7f8c8d;
+    -fx-border-width: 2px;
+}
+
+.list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 16px;
+    -fx-padding: 8px;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: #3d566e;
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: #2980b9;
+    -fx-text-fill: white;
+}
+
+.list-view:focused .list-cell:filled:selected {
+    -fx-background-color: #3498db;
+}

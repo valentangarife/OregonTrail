@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ui.GameViewController">
+
+    <!-- HUD superior -->
+    <top>
+        <HBox spacing="20" style="-fx-background-color: #222;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <children>
+                <Label fx:id="municionLabel" text="Munición: 0"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+
+                <Label fx:id="inventarioLabel" text="Inventario: 0/10"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+
+                <Label fx:id="dineroLabel" text="Dinero: $0"
+                       style="-fx-text-fill: white; -fx-font-size: 16px;"/>
+
+                <!-- Barra de vida arriba -->
+                <ImageView fx:id="healthBarImage"
+                           fitWidth="180" fitHeight="40"
+                           preserveRatio="true"/>
+            </children>
+        </HBox>
+    </top>
+
+    <!-- MAPA Y JUGADOR -->
+    <center>
+        <StackPane>
+            <!-- Canvas donde se dibuja el mapa -->
+            <Canvas fx:id="mapCanvas" width="1280" height="480"/>
+
+            <!-- Sprite del jugador, encima del mapa -->
+            <ImageView fx:id="playerImage"
+                       fitWidth="48" fitHeight="64"
+                       preserveRatio="true"/>
+        </StackPane>
+    </center>
+
+    <!-- BOTONES INFERIORES -->
+    <bottom>
+        <HBox spacing="15" alignment="CENTER" style="-fx-background-color: #111;">
+            <padding>
+                <Insets top="15" right="15" bottom="15" left="15"/>
+            </padding>
+            <children>
+                <Button text="Recoger objeto" prefWidth="150" onAction="#recogerObjeto"/>
+                <Button text="Victoria" prefWidth="150" onAction="#mostrarVictoria"/>
+                <Button text="Game Over" prefWidth="150" onAction="#mostrarDerrota"/>
+                <Button text="Volver al menú" prefWidth="150" onAction="#volverAlMenu"/>
+            </children>
+        </HBox>
+    </bottom>
+
+</BorderPane>

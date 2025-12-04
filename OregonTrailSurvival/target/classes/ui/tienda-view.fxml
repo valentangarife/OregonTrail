@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ui.TiendaViewController"
+           alignment="CENTER"
+           style="-fx-background-color: rgba(0, 0, 0, 0.9);">
+
+    <VBox alignment="CENTER" spacing="25" maxWidth="700" maxHeight="600"
+          style="-fx-background-color: #34495e; -fx-padding: 40; -fx-background-radius: 15;">
+
+        <!-- Título -->
+        <Label text="🏪 TIENDA" 
+               style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"/>
+
+        <!-- Dinero disponible -->
+        <Label fx:id="dineroLabel" text="💰 Dinero disponible: $0"
+               style="-fx-text-fill: #f39c12; -fx-font-size: 22px; -fx-font-weight: bold;"/>
+
+        <!-- Separador -->
+        <Label text="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+               style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;"/>
+
+        <!-- Productos -->
+        <VBox spacing="15" alignment="CENTER">
+            
+            <!-- Comida -->
+            <HBox alignment="CENTER" spacing="20" 
+                  style="-fx-background-color: rgba(46, 204, 113, 0.2); -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="🍖 COMIDA x5" 
+                       style="-fx-text-fill: #27ae60; -fx-font-size: 20px; -fx-font-weight: bold; -fx-min-width: 200;"/>
+                <Label text="Precio: $3"
+                       style="-fx-text-fill: #ecf0f1; -fx-font-size: 18px; -fx-min-width: 120;"/>
+                <Button text="COMPRAR" onAction="#comprarComida"
+                        style="-fx-font-size: 16px; -fx-padding: 10 25; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 5;"/>
+            </HBox>
+
+            <!-- Munición -->
+            <HBox alignment="CENTER" spacing="20" 
+                  style="-fx-background-color: rgba(52, 152, 219, 0.2); -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="🔫 MUNICIÓN x10" 
+                       style="-fx-text-fill: #3498db; -fx-font-size: 20px; -fx-font-weight: bold; -fx-min-width: 200;"/>
+                <Label text="Precio: $5"
+                       style="-fx-text-fill: #ecf0f1; -fx-font-size: 18px; -fx-min-width: 120;"/>
+                <Button text="COMPRAR" onAction="#comprarMunicion"
+                        style="-fx-font-size: 16px; -fx-padding: 10 25; -fx-background-color: #3498db; -fx-text-fill: white; -fx-background-radius: 5;"/>
+            </HBox>
+
+            <!-- Medicina -->
+            <HBox alignment="CENTER" spacing="20" 
+                  style="-fx-background-color: rgba(231, 76, 60, 0.2); -fx-padding: 15; -fx-background-radius: 10;">
+                <Label text="💊 MEDICINA x3" 
+                       style="-fx-text-fill: #e74c3c; -fx-font-size: 20px; -fx-font-weight: bold; -fx-min-width: 200;"/>
+                <Label text="Precio: $4"
+                       style="-fx-text-fill: #ecf0f1; -fx-font-size: 18px; -fx-min-width: 120;"/>
+                <Button text="COMPRAR" onAction="#comprarMedicina"
+                        style="-fx-font-size: 16px; -fx-padding: 10 25; -fx-background-color: #e74c3c; -fx-text-fill: white; -fx-background-radius: 5;"/>
+            </HBox>
+
+        </VBox>
+
+        <!-- Separador -->
+        <Label text="━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+               style="-fx-text-fill: #7f8c8d; -fx-font-size: 14px;"/>
+
+        <!-- Mensaje -->
+        <Label fx:id="mensajeLabel" text=""
+               style="-fx-text-fill: #f39c12; -fx-font-size: 16px; -fx-font-weight: bold;"
+               visible="false"/>
+
+        <!-- Botón volver -->
+        <Button text="Volver al Juego" onAction="#volverAlJuego"
+                style="-fx-font-size: 18px; -fx-padding: 12 35; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 5;"/>
+
+    </VBox>
+
+</StackPane>

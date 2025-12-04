@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.InstruccionesController"
+           fx:id="rootPane"
+           prefWidth="1100" prefHeight="720"
+           style="-fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);">
+
+    <VBox alignment="CENTER" spacing="25" style="-fx-padding: 40;">
+        
+        <!-- Título -->
+        <Label text="📜 INSTRUCCIONES DEL JUEGO 📜" 
+               style="-fx-font-size: 42px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);"/>
+        
+        <!-- Subtítulo -->
+        <Label text="¡Lee con atención antes de comenzar tu aventura!" 
+               style="-fx-font-size: 20px; -fx-text-fill: #ecf0f1; -fx-font-style: italic;"/>
+        
+        <!-- Contenedor de instrucciones -->
+        <VBox spacing="20" style="-fx-background-color: rgba(0, 0, 0, 0.6); -fx-padding: 30; -fx-background-radius: 15;">
+            
+            <!-- Movimiento -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="🎮" style="-fx-font-size: 32px;"/>
+                <VBox spacing="5">
+                    <Label text="MOVIMIENTO" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    <Label text="Usa las flechas ↑ ↓ ← → o las teclas W A S D para moverte" 
+                           style="-fx-font-size: 18px; -fx-text-fill: white;"/>
+                    <Label text="Solo puedes caminar por la ARENA (tiles amarillos)" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #f39c12; -fx-font-style: italic;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Combate -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="⚔️" style="-fx-font-size: 32px;"/>
+                <VBox spacing="5">
+                    <Label text="COMBATE" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+                    <Label text="¡No dejes que tus enemigos te maten!" 
+                           style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="• Dispara con CLIC IZQUIERDO hacia el cursor" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                    <Label text="• Cambia de arma con Q (Rifle ↔ Revólver)" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                    <Label text="• Recarga con R cuando te quedes sin munición" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Supervivencia -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="❤️" style="-fx-font-size: 32px;"/>
+                <VBox spacing="5">
+                    <Label text="SUPERVIVENCIA" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #27ae60;"/>
+                    <Label text="¡Recarga munición, salud y comida! ¡Lo necesitarás!" 
+                           style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="• Come con E para recuperar 1 vida" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                    <Label text="• Usa medicina con M para vida completa" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                    <Label text="• Recoge recursos caminando sobre ellos" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Tienda -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="🏪" style="-fx-font-size: 32px;"/>
+                <VBox spacing="5">
+                    <Label text="TIENDA" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #9b59b6;"/>
+                    <Label text="¡Compra en la tienda! ¡No te dé miedo!" 
+                           style="-fx-font-size: 18px; -fx-text-fill: white; -fx-font-weight: bold;"/>
+                    <Label text="Usa el botón 🏪 Tienda para comprar suministros" 
+                           style="-fx-font-size: 16px; -fx-text-fill: #ecf0f1;"/>
+                </VBox>
+            </HBox>
+            
+            <!-- Objetivo -->
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label text="🎯" style="-fx-font-size: 32px;"/>
+                <VBox spacing="5">
+                    <Label text="OBJETIVO" 
+                           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                    <Label text="Llega a los PORTALES para avanzar de escenario" 
+                           style="-fx-font-size: 18px; -fx-text-fill: white;"/>
+                    <Label text="¡Sobrevive y llega a Oregón!" 
+                           style="-fx-font-size: 18px; -fx-text-fill: #f39c12; -fx-font-weight: bold;"/>
+                </VBox>
+            </HBox>
+            
+        </VBox>
+        
+        <!-- Mensaje motivacional -->
+        <Label text="⚠️ ¡Prepárate para la aventura de tu vida! ⚠️" 
+               style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-effect: dropshadow(gaussian, black, 8, 0.8, 0, 0);"/>
+        
+        <!-- Mensaje de tecla espacio -->
+        <Label fx:id="espacioLabel" text="⌨️ Presiona ESPACIO para continuar ⌨️" 
+               style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-effect: dropshadow(gaussian, black, 10, 0.8, 0, 0);"/>
+        
+        <!-- Botón continuar -->
+        <Button fx:id="continuarButton"
+                text="✅ ¡ENTENDIDO! COMENZAR VIAJE"
+                onAction="#continuarAJuego"
+                prefWidth="400" prefHeight="70"
+                style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-background-color: #27ae60; -fx-text-fill: white; -fx-background-radius: 15; -fx-cursor: hand; -fx-effect: dropshadow(gaussian, black, 10, 0.5, 0, 0);"/>
+        
+        <!-- Botón volver -->
+        <Button text="← Volver a Preparar Viaje"
+                onAction="#volverAtras"
+                prefWidth="300" prefHeight="50"
+                style="-fx-font-size: 18px; -fx-background-color: #95a5a6; -fx-text-fill: white; -fx-background-radius: 10; -fx-cursor: hand;"/>
+        
+    </VBox>
+
+</StackPane>

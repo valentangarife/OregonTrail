@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.MenuPrincipalController">
+
+    <children>
+
+        <!-- Fondo del menú -->
+        <ImageView fitWidth="1100" preserveRatio="true">
+            <image>
+                <Image url="@../images/pantalla/Menu.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Botones transparentes alineados -->
+        <VBox alignment="CENTER" spacing="40">
+            <StackPane.margin>
+                <!-- sube/baja el bloque de botones -->
+                <Insets top="80"/>
+            </StackPane.margin>
+
+            <children>
+
+                <!-- INICIAR JUEGO -->
+                <Button onAction="#abrirJuego"
+                        prefWidth="420" prefHeight="90"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: transparent;
+                               -fx-text-fill: transparent;"/>
+
+                <!-- VER LOGROS -->
+                <Button onAction="#abrirLogros"
+                        prefWidth="420" prefHeight="90"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: transparent;
+                               -fx-text-fill: transparent;"/>
+
+                <!-- SALIR -->
+                <Button onAction="#salir"
+                        prefWidth="420" prefHeight="90"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: transparent;
+                               -fx-text-fill: transparent;"/>
+
+            </children>
+        </VBox>
+
+    </children>
+</StackPane>

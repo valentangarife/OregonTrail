@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+
+<StackPane xmlns="http://javafx.com/javafx/17"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="ui.MenuPrincipalController">
+
+    <children>
+
+        <!-- Fondo del menú -->
+        <ImageView fitWidth="1100" preserveRatio="true">
+            <image>
+                <Image url="@../images/pantalla/Menu.png"/>
+            </image>
+        </ImageView>
+
+        <!-- Zona de botones de volumen (arriba a la derecha) -->
+        <HBox alignment="TOP_RIGHT">
+            <StackPane.margin>
+                <Insets top="20" right="20"/>
+            </StackPane.margin>
+
+            <children>
+                <!-- Silenciar -->
+                <Button fx:id="btnSilenciar"
+                        onAction="#onSilenciarClick"
+                        prefWidth="60" prefHeight="60"
+                        style="-fx-background-color: transparent;"/>
+
+                <!-- Reanudar -->
+                <Button onAction="#onReanudarClick"
+                        prefWidth="60" prefHeight="60"
+                        style="-fx-background-color: transparent;"/>
+            </children>
+        </HBox>
+
+        <!-- Botones principales del menú -->
+        <VBox alignment="CENTER" spacing="40">
+            <StackPane.margin>
+                <Insets top="80"/>
+            </StackPane.margin>
+
+            <children>
+
+                <!-- INICIAR JUEGO -->
+                <Button onAction="#abrirJuego"
+                        prefWidth="420" prefHeight="90"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: transparent;"/>
+
+                <!-- VER LOGROS -->
+                <Button onAction="#abrirLogros"
+                        prefWidth="420" prefHeight="90"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: transparent;"/>
+
+                <!-- SALIR -->
+                <Button onAction="#salir"
+                        prefWidth="420" prefHeight="90"
+                        style="-fx-background-color: transparent;
+                               -fx-border-color: transparent;"/>
+
+            </children>
+        </VBox>
+
+    </children>
+</StackPane>

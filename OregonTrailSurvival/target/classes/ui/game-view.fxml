@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<StackPane xmlns="http://javafx.com/javafx"
+           xmlns:fx="http://javafx.com/fxml"
+           fx:controller="ui.GameViewController"
+           alignment="CENTER">
+
+    <!-- TODO EL JUEGO ESCALADO -->
+    <Group scaleX="0.7" scaleY="0.7">
+
+        <BorderPane prefWidth="1280" prefHeight="720">
+
+            <!-- HUD ARRIBA -->
+            <top>
+                <VBox spacing="5" style="-fx-background-color: black; -fx-padding: 10;">
+                    <!-- Primera fila: Salud y stats -->
+                    <HBox alignment="CENTER" spacing="30">
+                        <VBox spacing="5" alignment="CENTER">
+                            <ImageView fx:id="healthBarImage"
+                                       fitWidth="300" fitHeight="80"
+                                       preserveRatio="true"/>
+                            <Label fx:id="vidaLabel" text="❤️ VIDA: 100/100"
+                                   style="-fx-text-fill: #e74c3c; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+                        </VBox>
+
+                        <VBox spacing="3" alignment="CENTER_LEFT">
+                            <Label text="📦 SUMINISTROS:" 
+                                   style="-fx-text-fill: #ecf0f1; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+                            <Label fx:id="comidaLabel" text="🍖 Comida: 0 (E)"
+                                   style="-fx-text-fill: #27ae60; -fx-font-size: 15px;"/>
+                            <Label fx:id="municionInventarioLabel" text="🔫 Munición: 0"
+                                   style="-fx-text-fill: #3498db; -fx-font-size: 15px;"/>
+                            <Label fx:id="medicinaLabel" text="💊 Medicina: 0 (M)"
+                                   style="-fx-text-fill: #e74c3c; -fx-font-size: 15px;"/>
+                        </VBox>
+
+                        <Label fx:id="inventarioLabel" text="Inventario: 0/10"
+                               style="-fx-text-fill: white; -fx-font-size: 18px;"/>
+
+                        <Label fx:id="dineroLabel" text="Dinero: $0"
+                               style="-fx-text-fill: white; -fx-font-size: 18px;"/>
+                    </HBox>
+                    
+                    <!-- Segunda fila: Panel de armas -->
+                    <HBox alignment="CENTER" spacing="20" 
+                          style="-fx-background-color: rgba(50, 50, 50, 0.8); -fx-padding: 10; -fx-background-radius: 5;">
+                        <Label text="🔫 ARMA:" 
+                               style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        
+                        <Label fx:id="armaActualLabel" text="RIFLE AVANCARGA"
+                               style="-fx-text-fill: #f39c12; -fx-font-size: 16px; -fx-font-weight: bold;"/>
+                        
+                        <Label fx:id="municionArmaLabel" text="[6/6]"
+                               style="-fx-text-fill: #3498db; -fx-font-size: 16px;"/>
+                        
+                        <Label fx:id="danoArmaLabel" text="Daño: 30"
+                               style="-fx-text-fill: #e74c3c; -fx-font-size: 14px;"/>
+                        
+                        <Button text="Cambiar Arma (Q)" onAction="#cambiarArma"
+                                style="-fx-font-size: 14px; -fx-padding: 5 15; -fx-background-color: #27ae60; -fx-text-fill: white;"/>
+                        
+                        <Button text="Recargar (R)" onAction="#recargarArma"
+                                style="-fx-font-size: 14px; -fx-padding: 5 15; -fx-background-color: #e67e22; -fx-text-fill: white;"/>
+                    </HBox>
+                </VBox>
+            </top>
+
+            <!-- CENTRO (MAPA + JUGADOR) -->
+            <center>
+                <StackPane fx:id="gameStackPane">
+                    <Canvas fx:id="mapCanvas" width="800" height="600"/>
+                    <Pane fx:id="gamePane" prefWidth="800" prefHeight="600"/>
+                    <ImageView fx:id="playerImage"
+                               fitWidth="64" fitHeight="64"
+                               preserveRatio="true"/>
+                    
+                    <!-- Arma en la mano del jugador -->
+                    <ImageView fx:id="armaEnManoImage"
+                               fitWidth="48" fitHeight="48"
+                               preserveRatio="true"
+                               visible="false"
+                               mouseTransparent="true"/>
+                    
+                    <!-- Retícula (Crosshair) -->
+                    <Pane fx:id="crosshairPane" prefWidth="800" prefHeight="600" 
+                          mouseTransparent="false" pickOnBounds="false">
+                        <ImageView fx:id="crosshairImage"
+                                   fitWidth="40" fitHeight="40"
+                                   preserveRatio="true"
+                                   visible="true"/>
+                    </Pane>
+                    
+                    <!-- Mensaje de acción -->
+                    <Label fx:id="mensajeAccionLabel" text="" 
+                           style="-fx-background-color: rgba(0, 0, 0, 0.7); -fx-text-fill: white; -fx-font-size: 20px; -fx-padding: 15; -fx-background-radius: 10;"
+                           visible="false"
+                           StackPane.alignment="CENTER"/>
+                </StackPane>
+            </center>
+
+            <!-- BOTONES ABAJO -->
+            <bottom>
+                <HBox alignment="CENTER" spacing="20"
+                      style="-fx-padding: 10; -fx-background-color: black;">
+
+
+                    <Button text="Ver Inventario" onAction="#verInventario"
+                            style="-fx-font-size: 18px; -fx-padding: 10 20;"/>
+
+                    <Button text="🏪 Tienda" onAction="#abrirTienda"
+                            style="-fx-font-size: 18px; -fx-padding: 10 20; -fx-background-color: #f39c12; -fx-text-fill: white;"/>
+
+                    <Button text="📖 Manual" onAction="#abrirManual"
+                            style="-fx-font-size: 18px; -fx-padding: 10 20; -fx-background-color: #3498db; -fx-text-fill: white;"/>
+
+                    <Button text="Ver Logros" onAction="#verLogros"
+                            style="-fx-font-size: 18px; -fx-padding: 10 20;"/>
+
+
+
+                    <Button text="Volver al Menú" onAction="#volverAlMenu"
+                            style="-fx-font-size: 18px; -fx-padding: 10 20;"/>
+                </HBox>
+            </bottom>
+
+        </BorderPane>
+
+    </Group>
+
+</StackPane>

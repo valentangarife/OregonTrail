@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ui.ManualViewController"
+            prefWidth="700" prefHeight="600"
+            style="-fx-background-color: #2c3e50;">
+
+    <!-- ENCABEZADO -->
+    <top>
+        <VBox alignment="CENTER" spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20;">
+            <Label text="📖 MANUAL DE USUARIO" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #ecf0f1;"/>
+            <Label text="Oregon Trail - Guía Completa" style="-fx-font-size: 14px; -fx-text-fill: #bdc3c7;"/>
+        </VBox>
+    </top>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background: #2c3e50; -fx-background-color: #2c3e50;">
+            <VBox spacing="20" style="-fx-padding: 30;">
+
+                <!-- CONTROLES DE MOVIMIENTO -->
+                <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="🎮 CONTROLES DE MOVIMIENTO" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                    <Separator style="-fx-background-color: #3498db;"/>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="W / ↑" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-min-width: 80;"/>
+                        <Label text="Mover hacia ARRIBA" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="S / ↓" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-min-width: 80;"/>
+                        <Label text="Mover hacia ABAJO" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="A / ←" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-min-width: 80;"/>
+                        <Label text="Mover hacia la IZQUIERDA" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="D / →" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-min-width: 80;"/>
+                        <Label text="Mover hacia la DERECHA" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- CONTROLES DE COMBATE -->
+                <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="⚔️ CONTROLES DE COMBATE" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+                    <Separator style="-fx-background-color: #e74c3c;"/>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="MOUSE" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-min-width: 80;"/>
+                        <Label text="Apuntar con la retícula" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="CLIC IZQ" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-min-width: 80;"/>
+                        <Label text="Disparar proyectil" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="R" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-min-width: 80;"/>
+                        <Label text="Recargar arma" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="Q" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-min-width: 80;"/>
+                        <Label text="Cambiar de arma (Rifle ↔ Revólver)" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- INDICADORES DE PANTALLA -->
+                <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="📊 INDICADORES DE PANTALLA" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #2ecc71;"/>
+                    <Separator style="-fx-background-color: #2ecc71;"/>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="❤️ Vidas" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-min-width: 120;"/>
+                        <Label text="Salud del jugador (máximo 3)" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="🍖 Comida" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f39c12; -fx-min-width: 120;"/>
+                        <Label text="Restaura +1 vida" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="💊 Medicina" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #9b59b6; -fx-min-width: 120;"/>
+                        <Label text="Restaura vida completa (3 vidas)" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="🔫 Munición" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #3498db; -fx-min-width: 120;"/>
+                        <Label text="Balas en el cargador / Total" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                    
+                    <HBox spacing="15" alignment="CENTER_LEFT">
+                        <Label text="💰 Dinero" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f1c40f; -fx-min-width: 120;"/>
+                        <Label text="Monedas disponibles para comprar" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </HBox>
+                </VBox>
+
+                <!-- ESTRATEGIAS -->
+                <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="💡 ESTRATEGIAS Y CONSEJOS" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f39c12;"/>
+                    <Separator style="-fx-background-color: #f39c12;"/>
+                    
+                    <VBox spacing="8">
+                        <Label text="• Esquiva los proyectiles enemigos moviéndote constantemente" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                        <Label text="• Recoge recursos (comida, medicina, munición) del mapa" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                        <Label text="• Usa la tienda para comprar suministros cuando tengas dinero" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                        <Label text="• El Rifle hace más daño pero tiene menos munición" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                        <Label text="• El Revólver es más rápido y tiene más munición" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                        <Label text="• Busca el portal brillante para avanzar al siguiente escenario" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                        <Label text="• Completa todos los logros para ganar el juego" 
+                               style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;" wrapText="true"/>
+                    </VBox>
+                </VBox>
+
+                <!-- ARMAS -->
+                <VBox spacing="10" style="-fx-background-color: #34495e; -fx-padding: 20; -fx-background-radius: 10;">
+                    <Label text="🔫 ARMAS DISPONIBLES" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #95a5a6;"/>
+                    <Separator style="-fx-background-color: #95a5a6;"/>
+                    
+                    <VBox spacing="5">
+                        <Label text="RIFLE AVANCARGA" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+                        <Label text="  • Daño: 30 puntos" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                        <Label text="  • Capacidad: 6 balas" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                        <Label text="  • Recarga: 3 segundos" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </VBox>
+                    
+                    <VBox spacing="5">
+                        <Label text="REVÓLVER" style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #3498db;"/>
+                        <Label text="  • Daño: 15 puntos" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                        <Label text="  • Capacidad: 12 balas" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                        <Label text="  • Recarga: 1.5 segundos" style="-fx-font-size: 14px; -fx-text-fill: #ecf0f1;"/>
+                    </VBox>
+                </VBox>
+
+            </VBox>
+        </ScrollPane>
+    </center>
+
+    <!-- PIE DE PÁGINA -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" style="-fx-background-color: #34495e; -fx-padding: 15;">
+            <Button text="✖ Cerrar" onAction="#cerrarManual" 
+                    style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold; -fx-padding: 10 30; -fx-background-radius: 5;"/>
+        </HBox>
+    </bottom>
+
+</BorderPane>
